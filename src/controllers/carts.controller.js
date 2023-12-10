@@ -1,7 +1,7 @@
-/* const { Router } = require('express')
+const { Router } = require('express')
 const router = Router()
 const ProductManager = require('../index')
-const productManager = new ProductManager('../../archivo/cart.json')
+const productManager = new ProductManager('./archivo/cart.json')
 
 router.get('/', async (req, res) => {
     try {
@@ -20,6 +20,17 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.post('/', async (req, res) => {
+    try {
+        const { product } = req.body
+        await productManager.addProduct(product)
+        res.status(201).json ({message: 'Producto creado correctamente'})
+    } catch (error) {
+        console.error ('Error al cargar productos:', error.message)
+    }
+})
+
+
 
 module.exports = router
- */
+ 

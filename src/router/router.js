@@ -1,9 +1,10 @@
 const productsController = require ('../controllers/products.controller')
-//const cartController = require ('../controllers/cart.controller')
+const cartsController = require ('../controllers/carts.controller')
 
 const router = app => {
     app.use('/api/products', productsController)
-    //app.use('/api/cart', cartController)
+    app.use('/api/carts', cartsController)
 }
+
 
 module.exports = router

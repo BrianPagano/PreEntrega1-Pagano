@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const router = Router()
 const ProductManager = require('../index')
-const productManager = new ProductManager('../../archivo/products.json')
+const productManager = new ProductManager('./archivo/products.json')
 
 
 router.get('/', async (req, res) => {
@@ -37,9 +37,6 @@ router.get('/:pid', async (req, res) => {
     }
 })
 
-router.get('*', (req, res) => {
-    res.status(404).json ({ error: 'Not Found'})
-})
 
 router.post('/', async (req, res) => {
     try {
@@ -76,6 +73,10 @@ router.delete ('/:pid', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Error al borrar un producto.' })
     }
+})
+
+router.get('*', (req, res) => {
+    res.status(404).json ({ error: 'Not Found'})
 })
 
 

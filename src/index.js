@@ -6,7 +6,6 @@ class ProductManager {
         this.products = []
         this.id = 1
         this.path = filePath
-        console.log (this.path)
         // Cargar productos existentes desde el archivo al crear una nueva instancia
         this.loadProducts()
     }

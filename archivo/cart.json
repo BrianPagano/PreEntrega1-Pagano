@@ -1,7 +1,7 @@
 [
 	{
 		"id": 1,
-		"title": "Nombre del producto1",
+		"title": "Nombre del producto del carrito 1",
 		"description": "Descripción del producto",
 		"price": 19.99,
 		"thumbnail": "URL de la imagen",
@@ -12,7 +12,7 @@
 	},
 	{
 		"id": 2,
-		"title": "Nombre del producto22222",
+		"title": "Nombre del producto del carrito 2",
 		"description": "Descripción del producto",
 		"price": 19.99,
 		"thumbnail": "URL de la imagen",
@@ -23,7 +23,7 @@
 	},
 	{
 		"id": 3,
-		"title": "Nombre del producto3",
+		"title": "Nombre del producto del carrito 3",
 		"description": "Descripción del producto",
 		"price": 19.99,
 		"thumbnail": "URL de la imagen",
