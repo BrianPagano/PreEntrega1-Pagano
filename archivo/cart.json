@@ -1,0 +1,35 @@
+[
+	{
+		"id": 1,
+		"title": "Nombre del producto1",
+		"description": "Descripción del producto",
+		"price": 19.99,
+		"thumbnail": "URL de la imagen",
+		"code": "Código del producto1",
+		"stock": 10,
+		"status": true,
+		"category": "Categoría del producto"
+	},
+	{
+		"id": 2,
+		"title": "Nombre del producto22222",
+		"description": "Descripción del producto",
+		"price": 19.99,
+		"thumbnail": "URL de la imagen",
+		"code": "Código del producto2",
+		"stock": 10,
+		"status": true,
+		"category": "Categoría del producto"
+	},
+	{
+		"id": 3,
+		"title": "Nombre del producto3",
+		"description": "Descripción del producto",
+		"price": 19.99,
+		"thumbnail": "URL de la imagen",
+		"code": "Código del producto3",
+		"stock": 10,
+		"status": true,
+		"category": "Categoría del producto"
+	}
+]

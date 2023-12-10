@@ -1,5 +1,3 @@
-const { title } = require('process');
-
 const fs = require ('fs').promises
 
 class ProductManager {
@@ -8,27 +6,28 @@ class ProductManager {
         this.products = []
         this.id = 1
         this.path = filePath
+        console.log (this.path)
         // Cargar productos existentes desde el archivo al crear una nueva instancia
-        this.loadProducts();
+        this.loadProducts()
     }
 
     async loadProducts() {
         try {
-            const contenidoJson = await fs.readFile(this.path, 'utf8');
+            const contenidoJson = await fs.readFile(this.path, 'utf8')
             if (contenidoJson.trim()) {
-                this.products = JSON.parse(contenidoJson);
+                this.products = JSON.parse(contenidoJson)
                 // Encuentra el último ID para continuar con la secuencia
-                this.id = Math.max(...this.products.map(product => product.id), 0) + 1;
+                this.id = Math.max(...this.products.map(product => product.id), 0) + 1
             }
         } catch (error) {
-            console.error('No se puede leer el archivo, error:', error.message);
+            console.error('No se puede leer el archivo, error:', error.message)
         }
     }
 
 
     async addProduct(product) {
       try {
-          const { title, description, price, thumbnail, code, stock, status, category } = product;
+          const { title, description, price, thumbnail, code, stock, status, category } = product
           //Valido que todos los campos son obligatorios
           if (!title || !description || !price || !code || !stock || !status || !category) {
             return console.error ("Todos los campos son obligatorios. Producto no agregado.")
@@ -80,17 +79,17 @@ class ProductManager {
         } 
 
        // Actualiza cada propiedad individualmente
-       product.title = productUpdated.title;
-       product.description = productUpdated.description;
-       product.price = productUpdated.price;
-       product.thumbnail = productUpdated.thumbnail;
-       product.code = productUpdated.code;
-       product.stock = productUpdated.stock;
-       product.status = productUpdated.status;
-       product.category = productUpdated.category;
+       product.title = productUpdated.title
+       product.description = productUpdated.description
+       product.price = productUpdated.price
+       product.thumbnail = productUpdated.thumbnail
+       product.code = productUpdated.code
+       product.stock = productUpdated.stock
+       product.status = productUpdated.status
+       product.category = productUpdated.category
 
        // Actualiza el archivo después de la modificación
-       await this.updateFile();
+       await this.updateFile()
   
       } catch (error) {
         console.error("Error al actualizar el producto:", error.message)
@@ -106,7 +105,7 @@ class ProductManager {
         }
         return objetoRecuperado // Devuelve el array de productos
       } catch (error) {
-        console.error('No se puede leer el archivo, error:', error.message)
+        console.error('No se obtener el archivo, error:', error.message)
       }
     }
 
@@ -139,6 +138,6 @@ class ProductManager {
     }
   }
 
-module.exports = ProductManager;
+module.exports = ProductManager
 
 
