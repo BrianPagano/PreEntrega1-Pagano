@@ -1,35 +1,14 @@
 [
 	{
 		"id": 1,
-		"title": "Nombre del producto del carrito 1",
-		"description": "Descripción del producto",
-		"price": 19.99,
-		"thumbnail": "URL de la imagen",
-		"code": "Código del producto1",
-		"stock": 10,
-		"status": true,
-		"category": "Categoría del producto"
+		"products": []
 	},
 	{
 		"id": 2,
-		"title": "Nombre del producto del carrito 2",
-		"description": "Descripción del producto",
-		"price": 19.99,
-		"thumbnail": "URL de la imagen",
-		"code": "Código del producto2",
-		"stock": 10,
-		"status": true,
-		"category": "Categoría del producto"
+		"products": []
 	},
 	{
 		"id": 3,
-		"title": "Nombre del producto del carrito 3",
-		"description": "Descripción del producto",
-		"price": 19.99,
-		"thumbnail": "URL de la imagen",
-		"code": "Código del producto3",
-		"stock": 10,
-		"status": true,
-		"category": "Categoría del producto"
+		"products": []
 	}
 ]
