@@ -51,9 +51,7 @@ class CartManager {
   
     async getCartByID (id) {
         try {
-            const contenidoJson = await fs.readFile (this.path, 'utf8')
-            const objetoRecuperado =  JSON.parse(contenidoJson)
-            const findCart = objetoRecuperado.find (cart => cart.id === Number(id))
+            const findCart = this.carts.find (cart => cart.id === Number(id))
             if (findCart) return findCart.products
         } catch (error) {
             console.log ('Error al obtener los productos del carrito:', error.message)
@@ -62,23 +60,19 @@ class CartManager {
 
     async addProductInCart (cid, pid) {
         try {
-            //obtengo el contenido actual del archivo
-            const contenidoJson = await fs.readFile (this.path, 'utf8')
-            const objetoRecuperado =  JSON.parse(contenidoJson)
-            //busco el carrito con el id proporcionado por cid
-            const cartIndex = objetoRecuperado.findIndex (cart => cart.id === Number(cid))
+            const cartIndex = this.carts.findIndex (cart => cart.id === Number(cid))
             // si el carrito existe
             if (cartIndex !== -1) {
                 // buscar en array products con el id proporcionado por pid 
-                const productIndex = objetoRecuperado[cartIndex].products.findIndex (prod => prod.id === Number (pid))
-                console.log ('producto encontrado es :' + productIndex )
+                const productIndex = this.carts[cartIndex].products.findIndex (prod => prod.product === Number (pid))
+                
                 //si existe el producto sumar cantidad
                 if (productIndex !== -1){
-                    objetoRecuperado[cartIndex].products[productIndex].quantity++
+                    this.carts[cartIndex].products[productIndex].quantity++
+
                 } //si el producto no existe, agregar al carrito
                   else {
-                    objetoRecuperado[cartIndex].products.push ({product: Number(pid), quantity: 1})
-                    await this.updateFile();
+                    this.carts[cartIndex].products.push ({product: Number(pid), quantity: 1})
                 }
             // Guardo los cambios en el archivo
             await this.updateFile();
