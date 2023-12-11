@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
         res.json ({ products })
     } catch (error) {
         console.error ('Error al obtener los products:', error.message)
+        res.status(500).json({ error: 'Internal Server Error' })
     }
 })
 
@@ -34,6 +35,7 @@ router.get('/:pid', async (req, res) => {
         }
     } catch (error) {
         console.error ('Error al obtener los products:', error.message)
+        res.status(500).json({ error: 'Internal Server Error' })
     }
 })
 
@@ -45,6 +47,7 @@ router.post('/', async (req, res) => {
         res.status(201).json ({message: 'Producto creado correctamente'})
     } catch (error) {
         console.error ('Error al cargar productos:', error.message)
+        res.status(500).json({ error: 'Internal Server Error' })
     }
 })
 
